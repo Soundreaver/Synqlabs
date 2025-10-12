@@ -4,42 +4,35 @@ import { motion } from 'framer-motion';
 import { Zap } from 'lucide-react';
 import { fadeInUp, staggerContainer, float } from '@/lib/animations';
 
-const techStack = {
-  cloud: [
-    { name: 'AWS', logo: '☁️' },
-    { name: 'Azure', logo: '🔷' },
-    { name: 'Google Cloud', logo: '🌐' },
-  ],
-  ai: [
-    { name: 'OpenAI', logo: '🤖' },
-    { name: 'Anthropic', logo: '🧠' },
-    { name: 'TensorFlow', logo: '🔥' },
-    { name: 'PyTorch', logo: '⚡' },
-  ],
-  development: [
+// Organize technologies into 3 rows
+const techRows = [
+  // Row 1
+  [
     { name: 'Next.js', logo: '▲' },
     { name: 'React', logo: '⚛️' },
     { name: 'Node.js', logo: '🟢' },
     { name: 'Python', logo: '🐍' },
+    { name: 'TypeScript', logo: '📘' },
+    { name: 'JavaScript', logo: '💛' },
   ],
-  devops: [
+  // Row 2
+  [
+    { name: 'AWS', logo: '☁️' },
+    { name: 'Azure', logo: '🔷' },
+    { name: 'Google Cloud', logo: '🌐' },
     { name: 'Docker', logo: '🐳' },
     { name: 'Kubernetes', logo: '☸️' },
     { name: 'Terraform', logo: '🏗️' },
   ],
-  database: [
+  // Row 3
+  [
+    { name: 'OpenAI', logo: '🤖' },
+    { name: 'Anthropic', logo: '🧠' },
+    { name: 'TensorFlow', logo: '🔥' },
     { name: 'Supabase', logo: '⚡' },
     { name: 'PostgreSQL', logo: '🐘' },
     { name: 'MongoDB', logo: '🍃' },
   ],
-};
-
-const allTechs = [
-  ...techStack.cloud,
-  ...techStack.ai,
-  ...techStack.development,
-  ...techStack.devops,
-  ...techStack.database,
 ];
 
 export default function TechStack() {
@@ -89,89 +82,81 @@ export default function TechStack() {
           </motion.p>
         </motion.div>
 
-        {/* Tech Logo Grid */}
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
-        >
-          {allTechs.map((tech, index) => (
-            <motion.div
-              key={tech.name}
-              variants={fadeInUp}
-              custom={index}
-              whileHover={{ 
-                scale: 1.1,
-                y: -8,
-                transition: { duration: 0.3 }
-              }}
-              className="group relative"
-            >
-              {/* Card */}
-              <div className="relative aspect-square">
-                {/* Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black rounded-xl border border-gray-800 group-hover:border-brand-green/50 transition-all duration-500" />
-                
-                {/* Glow Effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 bg-brand-green/5 rounded-xl blur-xl" />
-                </div>
+      </div>
 
-                {/* Content */}
-                <div className="relative h-full flex flex-col items-center justify-center p-4 space-y-2">
-                  {/* Logo/Emoji */}
-                  <motion.div
-                    variants={float}
-                    animate="animate"
-                    className="text-4xl filter grayscale group-hover:grayscale-0 transition-all duration-500"
+      {/* Infinite Scrolling Tech Rows - Full Width */}
+      <div className="relative z-10 space-y-8 mt-16">
+        {techRows.map((row, rowIndex) => {
+          // Calculate total width needed: (items * (card width + gap)) 
+          // 6 items * (128px + 24px) = ~912px per set
+          const itemWidth = 152; // 128px card + 24px gap
+          const setWidth = row.length * itemWidth;
+          
+          return (
+            <div key={rowIndex} className="relative overflow-hidden">
+              {/* Scrolling Container */}
+              <motion.div
+                className="flex gap-6"
+                animate={{
+                  x: rowIndex % 2 === 0 ? [-setWidth, 0] : [0, -setWidth],
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: 'linear',
+                  repeatType: 'loop',
+                }}
+              >
+                {/* Duplicate items multiple times for seamless infinite loop */}
+                {Array(10).fill(row).flat().map((tech, index) => (
+                  <div
+                    key={`${tech.name}-${index}`}
+                    className="group relative flex-shrink-0"
                   >
-                    {tech.logo}
-                  </motion.div>
-                  
-                  {/* Name */}
-                  <div className="text-sm font-medium text-gray-500 group-hover:text-brand-green transition-colors duration-300 text-center">
-                    {tech.name}
+                    {/* Card */}
+                    <div className="relative w-32 h-32">
+                      {/* Background */}
+                      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm rounded-xl border border-gray-800/50 group-hover:border-brand-green/50 transition-all duration-500" />
+                      
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="absolute inset-0 bg-brand-green/10 rounded-xl blur-xl" />
+                      </div>
+
+                      {/* Content */}
+                      <div className="relative h-full flex flex-col items-center justify-center p-4 space-y-2">
+                        {/* Logo/Emoji */}
+                        <div className="text-4xl filter grayscale group-hover:grayscale-0 transition-all duration-500">
+                          {tech.logo}
+                        </div>
+                        
+                        {/* Name */}
+                        <div className="text-xs font-medium text-gray-500 group-hover:text-brand-green transition-colors duration-300 text-center">
+                          {tech.name}
+                        </div>
+                      </div>
+
+                      {/* Shimmer Effect */}
+                      <div className="absolute inset-0 rounded-xl overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-green/10 to-transparent"
+                          animate={{
+                            x: ['-100%', '100%'],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: 'linear',
+                          }}
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-
-                {/* Shimmer Effect */}
-                <div className="absolute inset-0 rounded-xl overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-green/10 to-transparent"
-                    animate={{
-                      x: ['-100%', '100%'],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: 'linear',
-                    }}
-                  />
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Categories */}
-        <motion.div
-          variants={fadeInUp}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-4 text-sm"
-        >
-          {Object.keys(techStack).map((category) => (
-            <div
-              key={category}
-              className="px-4 py-2 bg-gray-900 border border-gray-800 rounded-full text-gray-400 hover:border-brand-green/50 hover:text-brand-green transition-all duration-300 cursor-default"
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1).replace(/([A-Z])/g, ' $1')}
+                ))}
+              </motion.div>
             </div>
-          ))}
-        </motion.div>
+          );
+        })}
       </div>
     </section>
   );

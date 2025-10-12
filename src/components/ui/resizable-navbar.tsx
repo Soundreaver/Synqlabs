@@ -85,6 +85,10 @@ export const Navbar = ({ children, className }: NavbarProps) => {
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
+      initial={{
+        width: "100%",
+        y: 0,
+      }}
       animate={{
         width: visible ? "80%" : "100%",
         y: visible ? 10 : 0,
@@ -99,6 +103,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         visible && "rounded-full",
         className,
       )}
+      suppressHydrationWarning
     >
       {children}
     </motion.div>

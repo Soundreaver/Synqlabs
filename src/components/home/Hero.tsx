@@ -109,20 +109,31 @@ export default function Hero() {
               <motion.button
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 0 30px rgba(21, 37, 20, 0.5)",
+                  boxShadow: "0 0 40px rgba(34, 197, 94, 0.6)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-white font-semibold rounded-lg overflow-hidden transition-all"
+                className="group relative px-8 py-4 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-white font-semibold rounded-lg overflow-hidden shadow-[0_0_30px_rgba(34,197,94,0.4)] transition-all"
               >
                 <span className="relative z-10 flex items-center">
                   Explore Services
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
+                {/* Animated Shimmer */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-brand-green-light via-brand-green to-brand-green-dark"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.6 }}
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                  animate={{
+                    x: ['-200%', '200%'],
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: 'linear',
+                    repeatDelay: 1.5,
+                  }}
+                />
+                {/* Pulsing Background */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-brand-green-light via-brand-green to-brand-green-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </motion.button>
             </Link>
@@ -130,11 +141,14 @@ export default function Hero() {
             {/* Secondary CTA */}
             <Link href="#contact">
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 0 25px rgba(34, 197, 94, 0.3)",
+                }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-8 py-4 bg-transparent border-2 border-brand-green text-white font-semibold rounded-lg hover:bg-brand-green/10 transition-all"
+                className="group relative px-8 py-4 bg-transparent border-2 border-brand-green text-white font-semibold rounded-lg hover:bg-brand-green/10 transition-all overflow-hidden"
               >
-                <span className="flex items-center">
+                <span className="relative z-10 flex items-center">
                   Schedule Consultation
                   <motion.span
                     className="ml-2"
@@ -148,6 +162,19 @@ export default function Hero() {
                     →
                   </motion.span>
                 </span>
+                {/* Border Shimmer */}
+                <motion.div
+                  className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-transparent via-brand-green-light/50 to-transparent rounded-lg"
+                  animate={{
+                    x: ['-200%', '200%'],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'linear',
+                    repeatDelay: 2,
+                  }}
+                />
               </motion.button>
             </Link>
           </motion.div>

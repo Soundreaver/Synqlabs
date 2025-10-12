@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <ResizableNavbar className="top-0">
       {/* Desktop Navbar */}
-      <NavBody className="backdrop-blur-xl bg-black/40 border border-brand-green/30 shadow-[0_8px_32px_0_rgba(34,197,94,0.15)]">
+      <NavBody className="backdrop-blur-xl bg-black/40 border border-brand-green/30">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
           <motion.div
@@ -61,7 +61,7 @@ export default function Navbar() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="relative px-6 py-3 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-white font-medium rounded-lg backdrop-blur-sm overflow-hidden group z-20"
+            className="relative px-6 py-3 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-white font-medium rounded-lg backdrop-blur-sm overflow-hidden group z-20 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-shadow"
           >
             <span className="relative z-10 flex items-center">
               Get Started
@@ -77,11 +77,22 @@ export default function Navbar() {
                 →
               </motion.span>
             </span>
+            {/* Shimmer Effect */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-brand-green-light via-brand-green to-brand-green-dark"
-              initial={{ x: '-100%' }}
-              whileHover={{ x: '100%' }}
-              transition={{ duration: 0.6 }}
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              animate={{
+                x: ['-200%', '200%'],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: 'linear',
+                repeatDelay: 1,
+              }}
+            />
+            {/* Hover Gradient */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-brand-green-light via-brand-green to-brand-green-dark opacity-0 group-hover:opacity-100 transition-opacity"
             />
           </motion.button>
         </Link>
@@ -151,8 +162,20 @@ export default function Navbar() {
             className="pt-4"
           >
             <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-white font-medium rounded-lg hover:shadow-lg hover:shadow-brand-green/50 transition-all">
-                Get Started →
+              <button className="relative w-full px-6 py-3 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-white font-medium rounded-lg hover:shadow-lg hover:shadow-brand-green/50 transition-all overflow-hidden group">
+                <span className="relative z-10">Get Started →</span>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  animate={{
+                    x: ['-200%', '200%'],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: 'linear',
+                    repeatDelay: 1,
+                  }}
+                />
               </button>
             </Link>
           </motion.div>
