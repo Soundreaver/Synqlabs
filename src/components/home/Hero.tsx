@@ -17,7 +17,8 @@ export default function Hero() {
           beamWidth={3}
           beamHeight={30}
           beamNumber={20}
-          lightColor="#008844ff"
+          lightColor="#5c5c5cff"
+          // lightColor="#22c55e"
           speed={2}
           noiseIntensity={1.75}
           scale={0.2}
@@ -39,9 +40,17 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.3,
+                delayChildren: 0.2,
+              },
+            },
+          }}
           className="text-center space-y-8"
         >
           {/* Badge */}
@@ -70,14 +79,22 @@ export default function Hero() {
           {/* Main Headline */}
           <motion.div
             variants={fadeInUp}
+            transition={{ duration: 0.6 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-serif leading-tight"
           >
             <TextGenerateEffect
               words="Elevate Your Business"
               className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-serif leading-tight inline-block"
-              duration={0.8}
+              duration={0.6}
             />
-            <br />
+          </motion.div>
+
+          {/* Second Line with Typewriter */}
+          <motion.div
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white font-serif leading-tight"
+          >
             <TypewriterEffectSmooth
               words={[
                 { text: "with", className: "gradient-text" },
@@ -93,6 +110,7 @@ export default function Hero() {
           {/* Subheadline */}
           <motion.p
             variants={fadeInUp}
+            transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-lg sm:text-xl text-gray-300 leading-relaxed"
           >
             Bespoke AI consulting and SaaS development for enterprises that
@@ -102,6 +120,7 @@ export default function Hero() {
           {/* CTA Buttons */}
           <motion.div
             variants={fadeInUp}
+            transition={{ duration: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
             {/* Primary CTA */}
@@ -182,6 +201,7 @@ export default function Hero() {
           {/* Trust Indicators */}
           <motion.div
             variants={fadeInUp}
+            transition={{ duration: 0.6 }}
             className="pt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-gray-400"
           >
             <div className="flex items-center space-x-2 group cursor-default">
@@ -220,7 +240,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1 }}
+          transition={{ delay: 2.5, duration: 0.8 }}
           className="flex items-center justify-center"
         >
           <motion.div

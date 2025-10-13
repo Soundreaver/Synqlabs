@@ -31,7 +31,7 @@ export default function ServicesPage() {
               Bespoke Solutions for <GradientText>Discerning Enterprises</GradientText>
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
-              We don't offer cookie-cutter packages. Every solution is meticulously
+              We don&apos;t offer cookie-cutter packages. Every solution is meticulously
               crafted to match your unique vision and business objectives.
             </p>
           </motion.div>
@@ -240,7 +240,7 @@ export default function ServicesPage() {
                 Ready to <GradientText>Discuss Your Project?</GradientText>
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Let's explore how our bespoke approach can transform your vision into reality.
+                Let&apos;s explore how our bespoke approach can transform your vision into reality.
                 Schedule a complimentary consultation to discuss your unique needs.
               </p>
               <Link

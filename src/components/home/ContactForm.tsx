@@ -97,7 +97,7 @@ export default function ContactForm() {
                 variants={fadeInUp}
                 className="text-lg text-gray-400 leading-relaxed"
               >
-                Share your vision, and we'll craft the solution. Our team of experts is ready to discuss how we can elevate your business with bespoke AI and SaaS solutions.
+                Share your vision, and we&apos;ll craft the solution. Our team of experts is ready to discuss how we can elevate your business with bespoke AI and SaaS solutions.
               </motion.p>
             </div>
 
@@ -108,7 +108,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-1">24-Hour Response Time</h3>
-                  <p className="text-gray-400 text-sm">We'll get back to you within one business day</p>
+                  <p className="text-gray-400 text-sm">We&apos;ll get back to you within one business day</p>
                 </div>
               </div>
 
@@ -284,7 +284,7 @@ export default function ContactForm() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center text-brand-green text-sm"
                   >
-                    Thank you! We'll be in touch within 24 hours.
+                    Thank you! We&apos;ll be in touch within 24 hours.
                   </motion.p>
                 )}
               </form>

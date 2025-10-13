@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SynQ Labs | Luxury AI Solutions for Modern Enterprises",
+  title: "SynQ Labs | Elegant AI Solutions for Modern Enterprises",
   description: "Bespoke AI consulting and SaaS development for enterprises that demand excellence. Transform your vision into intelligent solutions.",
 };
 

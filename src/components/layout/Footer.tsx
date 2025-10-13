@@ -68,7 +68,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Luxury AI Solutions for Modern Enterprises. Bespoke consulting and development for those who demand excellence.
+              Elegant AI Solutions for Modern Enterprises. Bespoke consulting and development for those who demand excellence.
             </p>
             <div className="flex items-start space-x-2 text-gray-400 text-sm">
               <MapPin className="w-4 h-4 mt-0.5 text-brand-green flex-shrink-0" />

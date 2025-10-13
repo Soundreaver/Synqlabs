@@ -40,4 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-SYNQLABS_BUILD_GUIDE.md
+/docs/*

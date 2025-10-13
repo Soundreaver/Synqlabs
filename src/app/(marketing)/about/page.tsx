@@ -69,7 +69,7 @@ export default function AboutPage() {
 
               <motion.div variants={fadeInUp} className="relative p-8 rounded-2xl bg-gradient-to-br from-[#152514]/20 to-transparent border border-[#152514]/30">
                 <blockquote className="text-2xl md:text-3xl font-light italic text-gray-200">
-                  "We don't build software. We engineer experiences that define the future."
+                  &quot;We don&apos;t build software. We engineer experiences that define the future.&quot;
                 </blockquote>
               </motion.div>
             </motion.div>
@@ -196,8 +196,8 @@ export default function AboutPage() {
                 Let's Build Something <GradientText>Extraordinary</GradientText>
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Whether you're looking to transform your business with AI or build
-                the next generation of enterprise software, we're ready to bring
+                Whether you&apos;re looking to transform your business with AI or build
+                the next generation of enterprise software, we&apos;re ready to bring
                 your vision to life.
               </p>
               <Link
@@ -273,7 +273,7 @@ const coreValues = [
     title: "Innovation",
     icon: Sparkles,
     description:
-      "We stay at the bleeding edge, exploring new technologies to deliver tomorrow's solutions today.",
+      "We stay at the bleeding edge, exploring new technologies to deliver tomorrow&apos;s solutions today.",
   },
   {
     title: "Partnership",

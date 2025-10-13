@@ -192,7 +192,6 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
-  onClose,
 }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
@@ -233,12 +232,7 @@ export const NavbarLogo = () => {
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <img
-        src="https://assets.aceternity.com/logo-dark.png"
-        alt="logo"
-        width={30}
-        height={30}
-      />
+      <div className="w-[30px] h-[30px] bg-gray-200 dark:bg-gray-800 rounded" />
       <span className="font-medium text-black dark:text-white">Startup</span>
     </a>
   );
@@ -254,11 +248,12 @@ export const NavbarButton = ({
 }: {
   href?: string;
   as?: React.ElementType;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   variant?: "primary" | "secondary" | "dark" | "gradient";
-} & React.HTMLAttributes<HTMLElement>) => {
-  const Tag = (as || (href ? "a" : "button")) as any;
+  [key: string]: unknown;
+}) => {
+  const Tag = (as || (href ? "a" : "button")) as never;
   
   const baseStyles =
     "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
@@ -272,13 +267,13 @@ export const NavbarButton = ({
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
 
-  return (
-    <Tag
-      href={href}
-      className={cn(baseStyles, variantStyles[variant], className)}
-      {...props}
-    >
-      {children}
-    </Tag>
+  return React.createElement(
+    Tag,
+    {
+      href,
+      className: cn(baseStyles, variantStyles[variant], className),
+      ...props,
+    },
+    children
   );
 };
