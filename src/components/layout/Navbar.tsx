@@ -27,41 +27,74 @@ export default function Navbar() {
   return (
     <ResizableNavbar className="top-0">
       {/* Desktop Navbar */}
-      <NavBody className="backdrop-blur-xl bg-black/40 border border-brand-green/30">
+      <NavBody className="backdrop-blur-xl bg-black/40">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
           <motion.div
-            whileHover={{ scale: 1.05, rotate: 5 }}
+            whileHover={{ scale: 1.15, rotate: 360 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
             className="relative"
           >
-            <Brain className="w-8 h-8 text-brand-green" />
             <motion.div
-              className="absolute inset-0 bg-brand-green/20 rounded-full blur-xl"
               animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3],
+                rotate: [0, 360],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <Brain className="w-8 h-8 text-brand-green drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]" />
+            </motion.div>
+            
+            {/* Pulsing Ring */}
+            <motion.div
+              className="absolute inset-0 border-2 border-brand-green/30 rounded-full"
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.5, 0, 0.5],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          </motion.div>
+          
+          <motion.span
+            className="text-xl font-bold text-white font-serif"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            S<motion.span
+              className="text-brand-green font-extrabold tracking-wide"
+              animate={{
+                textShadow: [
+                  '0 0 10px rgba(251, 191, 36, 0.5)',
+                  '0 0 20px rgba(251, 191, 36, 0.8)',
+                  '0 0 10px rgba(251, 191, 36, 0.5)',
+                ],
               }}
               transition={{
                 duration: 2,
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
-            />
-          </motion.div>
-          <span className="text-xl font-bold text-white font-serif">
-            SynQ <span className="text-brand-green">Labs</span>
-          </span>
+            >AI</motion.span>ndLabs
+          </motion.span>
         </Link>
 
         {/* Nav Items */}
-        <NavItems items={navItems} className="text-gray-300 hover:text-white" />
+        <NavItems items={navItems} className="text-white hover:text-black" />
 
         {/* CTA Button */}
         <Link href="#contact">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="relative px-6 py-3 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-white font-medium rounded-lg backdrop-blur-sm overflow-hidden group z-20 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-shadow"
+            className="relative px-6 py-3 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-black font-medium rounded-lg backdrop-blur-sm overflow-hidden group z-20 transition-all"
           >
             <span className="relative z-10 flex items-center">
               Get Started
@@ -99,31 +132,64 @@ export default function Navbar() {
       </NavBody>
 
       {/* Mobile Navbar */}
-      <MobileNav className="backdrop-blur-xl bg-black/40 border border-brand-green/30 shadow-[0_8px_32px_0_rgba(34,197,94,0.15)]">
+      <MobileNav className="backdrop-blur-xl bg-black/40">
         <MobileNavHeader>
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileHover={{ scale: 1.15, rotate: 360 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
               className="relative"
             >
-              <Brain className="w-8 h-8 text-brand-green" />
               <motion.div
-                className="absolute inset-0 bg-brand-green/20 rounded-full blur-xl"
                 animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.6, 0.3],
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
+                <Brain className="w-8 h-8 text-brand-green drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]" />
+              </motion.div>
+              
+              {/* Pulsing Ring */}
+              <motion.div
+                className="absolute inset-0 border-2 border-brand-green/30 rounded-full"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  opacity: [0.5, 0, 0.5],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.div>
+            
+            <motion.span
+              className="text-xl font-bold text-white font-serif"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              S<motion.span
+                className="text-brand-green font-extrabold tracking-wide"
+                animate={{
+                  textShadow: [
+                    '0 0 10px rgba(251, 191, 36, 0.5)',
+                    '0 0 20px rgba(251, 191, 36, 0.8)',
+                    '0 0 10px rgba(251, 191, 36, 0.5)',
+                  ],
                 }}
                 transition={{
                   duration: 2,
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
-              />
-            </motion.div>
-            <span className="text-xl font-bold text-white font-serif">
-              SynQ <span className="text-brand-green">Labs</span>
-            </span>
+              >AI</motion.span>ndLabs
+            </motion.span>
           </Link>
 
           {/* Mobile Toggle */}
@@ -137,7 +203,7 @@ export default function Navbar() {
         <MobileNavMenu
           isOpen={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}
-          className="backdrop-blur-xl bg-black/95 border border-brand-green/30"
+          className="backdrop-blur-xl bg-black/95"
         >
           {navItems.map((item, index) => (
             <motion.div

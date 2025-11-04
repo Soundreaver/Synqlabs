@@ -17,12 +17,12 @@ export default function BlogCard({ post, index = 0 }: BlogCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="group relative rounded-2xl overflow-hidden border border-[#152514]/20 hover:border-[#152514]/50 transition-all duration-300 bg-gradient-to-br from-[#152514]/5 to-transparent"
+      className="group relative rounded-2xl overflow-hidden border border-[#2A1810]/20 hover:border-[#2A1810]/50 transition-all duration-300 bg-gradient-to-br from-[#2A1810]/5 to-transparent"
     >
       <Link href={`/blogs/${post.slug}`} className="block">
         {/* Featured Image */}
         {post.featured_image && (
-          <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[#152514]/20 to-black">
+          <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[#2A1810]/20 to-black">
             <div 
               className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
               style={{ backgroundImage: `url(${post.featured_image})` }}
@@ -39,7 +39,7 @@ export default function BlogCard({ post, index = 0 }: BlogCardProps) {
               {post.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center px-3 py-1 rounded-full bg-[#152514]/20 text-xs font-medium text-[#152514] border border-[#152514]/30"
+                  className="inline-flex items-center px-3 py-1 rounded-full bg-[#2A1810]/20 text-xs font-medium text-[#FF6B35] border border-[#FF6B35]/30"
                 >
                   <Tag className="w-3 h-3 mr-1" />
                   {tag}
@@ -49,7 +49,7 @@ export default function BlogCard({ post, index = 0 }: BlogCardProps) {
           )}
 
           {/* Title */}
-          <h3 className="text-2xl font-bold mb-3 group-hover:text-[#152514] transition-colors duration-300 line-clamp-2">
+          <h3 className="text-2xl font-bold mb-3 group-hover:text-[#FF6B35] transition-colors duration-300 line-clamp-2">
             {post.title}
           </h3>
 
@@ -82,17 +82,17 @@ export default function BlogCard({ post, index = 0 }: BlogCardProps) {
 
           {/* Author */}
           {post.author && (
-            <div className="flex items-center justify-between pt-4 border-t border-[#152514]/20">
+            <div className="flex items-center justify-between pt-4 border-t border-[#2A1810]/20">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#152514]/30 to-[#152514]/10 flex items-center justify-center">
-                  <span className="text-sm font-semibold text-[#152514]">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FF6B35]/30 to-[#FF6B35]/10 flex items-center justify-center">
+                  <span className="text-sm font-semibold text-[#FF6B35]">
                     {post.author.charAt(0).toUpperCase()}
                   </span>
                 </div>
                 <span className="text-sm text-gray-400">{post.author}</span>
               </div>
               
-              <div className="flex items-center gap-1 text-[#152514] font-medium text-sm group-hover:gap-2 transition-all duration-300">
+              <div className="flex items-center gap-1 text-[#FF6B35] font-medium text-sm group-hover:gap-2 transition-all duration-300">
                 Read more
                 <ArrowRight className="w-4 h-4" />
               </div>

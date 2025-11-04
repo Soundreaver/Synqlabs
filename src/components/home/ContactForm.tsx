@@ -62,6 +62,12 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="relative py-24 bg-black overflow-hidden">
+      {/* Top Fade */}
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
+      
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+      
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl" />
@@ -81,7 +87,7 @@ export default function ContactForm() {
             <div>
               <motion.div variants={fadeInUp} className="inline-flex items-center space-x-2 px-4 py-2 bg-brand-green/10 border border-brand-green/30 rounded-full mb-6 group hover:bg-brand-green/15 transition-all duration-300">
                 <Mail className="w-4 h-4 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-                <span className="text-sm text-brand-green-light font-medium drop-shadow-[0_0_4px_rgba(34,197,94,0.4)]">Get in Touch</span>
+                <span className="text-sm text-brand-green-light font-medium drop-shadow-[0_0_4px_rgba(251,191,36,0.4)]">Get in Touch</span>
               </motion.div>
 
               <motion.h2
@@ -253,7 +259,7 @@ export default function ContactForm() {
                   disabled={isSubmitting || isSuccess}
                   whileHover={{ scale: isSubmitting || isSuccess ? 1 : 1.02 }}
                   whileTap={{ scale: isSubmitting || isSuccess ? 1 : 0.98 }}
-                  className="w-full px-6 py-4 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-brand-green/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-brand-green/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                 >
                   {isSuccess ? (
                     <>
