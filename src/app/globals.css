@@ -2,37 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TextType cursor styling */
-.text-type__cursor {
-  color: #FBBF24 !important;
-  font-weight: bold;
-  margin-left: 2px;
-}
-
-.cursor-underscore {
-  color: #FBBF24 !important;
-  font-weight: 900 !important;
-  font-size: 1.2em !important;
-  display: inline-block !important;
-  vertical-align: bottom !important;
-  line-height: 0.8 !important;
-  margin-left: 4px !important;
-  opacity: 1 !important;
-}
-
-.animate-blink {
-  animation: blink 1s ease-in-out infinite;
-}
-
-@keyframes blink {
-  0%, 49% {
-    opacity: 1;
-  }
-  50%, 100% {
-    opacity: 0;
-  }
-}
-
 /* Global Styles */
 html {
   scroll-behavior: smooth;
@@ -190,35 +159,6 @@ select {
 
 /* Utility Classes */
 @layer utilities {
-
-  /* Section Fade Effects */
-  .section-fade {
-    position: relative;
-  }
-
-  .section-fade::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to bottom, #000000, transparent);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .section-fade::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to top, #000000, transparent);
-    pointer-events: none;
-    z-index: 1;
-  }
 
   /* Micro-interactions - Buttons */
   .btn-hover-lift {
