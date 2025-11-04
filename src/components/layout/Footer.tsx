@@ -27,7 +27,7 @@ const footerLinks = {
 const socialLinks = [
   { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
   { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:contact@synqlabs.ai', label: 'Email' },
+  { icon: Mail, href: 'mailto:contact@saindlabs.ai', label: 'Email' },
 ];
 
 export default function Footer() {
@@ -64,7 +64,7 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-brand-green/20 rounded-full blur-lg" />
               </motion.div>
               <span className="text-xl font-bold text-white font-serif">
-                SynQ <span className="text-brand-green">Labs</span>
+                S<span className="text-brand-green font-extrabold tracking-wide">AI</span>ndLabs
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -136,7 +136,7 @@ export default function Footer() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-4 py-2 bg-brand-green text-white rounded-lg hover:bg-brand-green-light transition-colors text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-4 py-2 bg-brand-green text-black rounded-lg hover:bg-brand-green-light transition-colors text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Subscribing...' : 'Subscribe'}
               </motion.button>
@@ -160,7 +160,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           {/* Copyright */}
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} SynQ Labs. All rights reserved.
+            © {new Date().getFullYear()} SaindLabs. All rights reserved.
           </p>
 
           {/* Social Links */}

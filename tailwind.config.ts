@@ -10,14 +10,15 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-  			'brand-green': {
-  				DEFAULT: '#152514',
-  				dark: '#0f1b0f',
-  				muted: '#1a2e1a',
-  				accent: '#22c55e',
-  				'accent-light': '#4ade80',
-  				'accent-dark': '#16a34a'
-  			},
+		'brand-green': {
+			DEFAULT: '#FBBF24',
+			dark: '#D97706',
+			light: '#FDE68A',
+			muted: '#F59E0B',
+			accent: '#FBBF24',
+			'accent-light': '#FEF3C7',
+			'accent-dark': '#B45309'
+		},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -72,13 +73,13 @@ const config: Config = {
   			]
   		},
   		boxShadow: {
-  			'glow-sm': '0 0 10px rgba(34, 197, 94, 0.5)',
-  			glow: '0 0 20px rgba(34, 197, 94, 0.6)',
-  			'glow-lg': '0 0 30px rgba(34, 197, 94, 0.7)',
-  			'glow-xl': '0 0 40px rgba(34, 197, 94, 0.8)'
+		'glow-sm': '0 0 10px rgba(251, 191, 36, 0.5)',
+		glow: '0 0 20px rgba(251, 191, 36, 0.6)',
+		'glow-lg': '0 0 30px rgba(251, 191, 36, 0.7)',
+		'glow-xl': '0 0 40px rgba(251, 191, 36, 0.8)'
   		},
   		borderColor: {
-  			glow: 'rgba(34, 197, 94, 0.5)'
+		glow: 'rgba(251, 191, 36, 0.5)'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
