@@ -38,6 +38,12 @@ const techRows = [
 export default function TechStack() {
   return (
     <section className="relative py-24 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+      {/* Top Fade */}
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
+      
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+      
       {/* Grid Pattern Background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -62,7 +68,7 @@ export default function TechStack() {
         >
           <motion.div variants={fadeInUp} className="inline-flex items-center space-x-2 px-4 py-2 bg-brand-green/10 border border-brand-green/30 rounded-full mb-6 group hover:bg-brand-green/15 transition-all duration-300">
             <Zap className="w-4 h-4 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-            <span className="text-sm text-brand-green-light font-medium drop-shadow-[0_0_4px_rgba(34,197,94,0.4)]">Technology Stack</span>
+            <span className="text-sm text-brand-green-light font-medium drop-shadow-[0_0_4px_rgba(251,191,36,0.4)]">Technology Stack</span>
           </motion.div>
 
           <motion.h2

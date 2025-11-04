@@ -45,7 +45,7 @@ export default function BlogContent({ content }: BlogContentProps) {
         elements.push(
           <blockquote
             key={key++}
-            className="border-l-4 border-[#152514] pl-4 py-2 my-4 italic text-gray-300"
+            className="border-l-4 border-[#FF6B35] pl-4 py-2 my-4 italic text-gray-300"
           >
             {line.substring(2)}
           </blockquote>

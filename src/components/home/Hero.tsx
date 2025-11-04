@@ -20,7 +20,7 @@ export default function Hero() {
           lightColor="#5c5c5cff"
           // lightColor="#22c55e"
           speed={2}
-          noiseIntensity={1.75}
+          noiseIntensity={0}
           scale={0.2}
           rotation={30}
         />
@@ -28,9 +28,9 @@ export default function Hero() {
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent opacity-80" />
-      
-      {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-10" />
+
+      {/* Bottom Fade - Enhanced for smooth section transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
 
       {/* Radial Gradient Accent */}
       <div className="absolute inset-0">
@@ -69,7 +69,7 @@ export default function Hero() {
                 ease: "easeInOut",
               }}
             >
-              <Sparkles className="w-4 h-4 text-brand-green-light drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+            <Sparkles className="w-4 h-4 text-brand-green-light" />
             </motion.div>
             <span className="text-sm text-gray-300">
               Elegant AI Solutions for Modern Enterprises
@@ -128,10 +128,10 @@ export default function Hero() {
               <motion.button
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 0 40px rgba(34, 197, 94, 0.6)",
+                  boxShadow: "0 0 40px rgba(251, 191, 36, 0.6)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-white font-semibold rounded-lg overflow-hidden shadow-[0_0_30px_rgba(34,197,94,0.4)] transition-all"
+                className="group relative px-8 py-4 bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light text-black font-semibold rounded-lg overflow-hidden shadow-[0_0_30px_rgba(251,191,36,0.4)] transition-all"
               >
                 <span className="relative z-10 flex items-center">
                   Explore Services
@@ -141,31 +141,29 @@ export default function Hero() {
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
                   animate={{
-                    x: ['-200%', '200%'],
+                    x: ["-200%", "200%"],
                   }}
                   transition={{
                     duration: 2.5,
                     repeat: Infinity,
-                    ease: 'linear',
+                    ease: "linear",
                     repeatDelay: 1.5,
                   }}
                 />
                 {/* Pulsing Background */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-brand-green-light via-brand-green to-brand-green-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                />
+                <motion.div className="absolute inset-0 bg-gradient-to-r from-brand-green-light via-brand-green to-brand-green-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             </Link>
 
             {/* Secondary CTA */}
             <Link href="#contact">
               <motion.button
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 0 25px rgba(34, 197, 94, 0.3)",
+                  boxShadow: "0 0 25px rgba(251, 191, 36, 0.3)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-transparent border-2 border-brand-green text-white font-semibold rounded-lg hover:bg-brand-green/10 transition-all overflow-hidden"
+                className="group relative px-8 py-4 bg-transparent border-2 border-brand-green text-brand-green-light font-semibold rounded-lg hover:bg-brand-green/10 transition-all overflow-hidden"
               >
                 <span className="relative z-10 flex items-center">
                   Schedule Consultation
@@ -185,12 +183,12 @@ export default function Hero() {
                 <motion.div
                   className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-transparent via-brand-green-light/50 to-transparent rounded-lg"
                   animate={{
-                    x: ['-200%', '200%'],
+                    x: ["-200%", "200%"],
                   }}
                   transition={{
                     duration: 3,
                     repeat: Infinity,
-                    ease: 'linear',
+                    ease: "linear",
                     repeatDelay: 2,
                   }}
                 />
@@ -207,7 +205,7 @@ export default function Hero() {
             <div className="flex items-center space-x-2 group cursor-default">
               <div className="relative">
                 <div className="absolute inset-0 bg-brand-green-light rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
-                <div className="relative w-2 h-2 bg-gradient-to-br from-brand-green-light to-brand-green rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.6)]" />
+                <div className="relative w-2 h-2 bg-gradient-to-br from-brand-green-light to-brand-green rounded-full animate-pulse shadow-[0_0_10px_rgba(251,191,36,0.6)]" />
               </div>
               <span className="group-hover:text-gray-300 transition-colors">
                 Enterprise-Grade Security
@@ -216,7 +214,7 @@ export default function Hero() {
             <div className="flex items-center space-x-2 group cursor-default">
               <div className="relative">
                 <div className="absolute inset-0 bg-brand-green-light rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
-                <div className="relative w-2 h-2 bg-gradient-to-br from-brand-green-light to-brand-green rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.6)]" />
+                <div className="relative w-2 h-2 bg-gradient-to-br from-brand-green-light to-brand-green rounded-full animate-pulse shadow-[0_0_10px_rgba(251,191,36,0.6)]" />
               </div>
               <span className="group-hover:text-gray-300 transition-colors">
                 Bespoke Solutions
@@ -225,7 +223,7 @@ export default function Hero() {
             <div className="flex items-center space-x-2 group cursor-default">
               <div className="relative">
                 <div className="absolute inset-0 bg-brand-green-light rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
-                <div className="relative w-2 h-2 bg-gradient-to-br from-brand-green-light to-brand-green rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.6)]" />
+                <div className="relative w-2 h-2 bg-gradient-to-br from-brand-green-light to-brand-green rounded-full animate-pulse shadow-[0_0_10px_rgba(251,191,36,0.6)]" />
               </div>
               <span className="group-hover:text-gray-300 transition-colors">
                 24/7 Support

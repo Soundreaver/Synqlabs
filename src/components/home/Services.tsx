@@ -36,14 +36,14 @@ const SkeletonOne = () => {
           <svg className="absolute inset-0 w-full h-full opacity-30">
             <motion.line
               x1="25%" y1="30%" x2="45%" y2="30%"
-              stroke="rgba(34, 197, 94, 0.5)"
+              stroke="rgba(251, 191, 36, 0.5)"
               strokeWidth="2"
               animate={{ pathLength: [0, 1, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
             <motion.line
               x1="45%" y1="30%" x2="65%" y2="55%"
-              stroke="rgba(34, 197, 94, 0.5)"
+              stroke="rgba(251, 191, 36, 0.5)"
               strokeWidth="2"
               animate={{ pathLength: [0, 1, 0] }}
               transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
@@ -113,9 +113,9 @@ const SkeletonThree = () => {
               className="w-12 h-16 border-2 border-brand-green/30 rounded relative"
               animate={{
                 borderColor: [
-                  'rgba(34, 197, 94, 0.3)',
-                  'rgba(34, 197, 94, 0.6)',
-                  'rgba(34, 197, 94, 0.3)',
+                  'rgba(251, 191, 36, 0.3)',
+                  'rgba(251, 191, 36, 0.6)',
+                  'rgba(251, 191, 36, 0.3)',
                 ],
               }}
               transition={{
@@ -138,7 +138,7 @@ const SkeletonThree = () => {
       <svg className="absolute inset-0 w-full h-full opacity-20">
         <motion.path
           d="M 20,50 Q 50,20 80,50"
-          stroke="rgba(34, 197, 94, 0.4)"
+              stroke="rgba(251, 191, 36, 0.4)"
           strokeWidth="2"
           fill="none"
           animate={{ pathLength: [0, 1] }}
@@ -181,9 +181,9 @@ const SkeletonFour = () => {
               animate={{
                 scale: [1, 1.2, 1],
                 borderColor: [
-                  'rgba(34, 197, 94, 0.4)',
-                  'rgba(34, 197, 94, 0.8)',
-                  'rgba(34, 197, 94, 0.4)',
+                  'rgba(251, 191, 36, 0.4)',
+                  'rgba(251, 191, 36, 0.8)',
+                  'rgba(251, 191, 36, 0.4)',
                 ],
               }}
               transition={{
@@ -238,6 +238,12 @@ const services = [
 export default function Services() {
   return (
     <section className="relative py-24 bg-black overflow-hidden">
+      {/* Top Fade */}
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
+      
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+      
       {/* Background Gradient */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-green/5 rounded-full blur-3xl" />
@@ -254,7 +260,7 @@ export default function Services() {
         >
           <motion.div variants={fadeInUp} className="inline-flex items-center space-x-2 px-4 py-2 bg-brand-green/10 border border-brand-green/30 rounded-full mb-6 group hover:bg-brand-green/15 transition-all duration-300">
             <Sparkles className="w-4 h-4 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-            <span className="text-sm text-brand-green-light font-medium drop-shadow-[0_0_4px_rgba(34,197,94,0.4)]">Our Expertise</span>
+            <span className="text-sm text-brand-green-light font-medium drop-shadow-[0_0_4px_rgba(251,191,36,0.4)]">Our Expertise</span>
           </motion.div>
 
           <motion.h2
