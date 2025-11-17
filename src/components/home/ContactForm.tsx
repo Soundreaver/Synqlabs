@@ -61,19 +61,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-black overflow-hidden">
-      {/* Top Fade */}
-      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
-      
-      {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
-      
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl" />
-      </div>
-
+    <section id="contact" className="relative py-24 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - Info */}

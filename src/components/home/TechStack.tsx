@@ -37,27 +37,7 @@ const techRows = [
 
 export default function TechStack() {
   return (
-    <section className="relative py-24 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
-      {/* Top Fade */}
-      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
-      
-      {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
-      
-      {/* Grid Pattern Background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(21, 37, 20, 0.3) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(21, 37, 20, 0.3) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
-        }} />
-      </div>
-
-      {/* Radial Gradient */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-green/10 rounded-full blur-3xl" />
-      </div>
-
+    <section className="relative py-24 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={staggerContainer}
